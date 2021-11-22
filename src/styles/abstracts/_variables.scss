@@ -1,0 +1,29 @@
+:root {
+  --color-primary: hsl(184.29, 73.68%, 7.45%);
+  --color-primary-light: hsl(186.21, 74.36%, 7.65%);
+  --color-primary-dark: hsl(184.29, 73.68%, 2%);
+  --color-secondary: hsl(186, 71%, 30%);
+  --color-secondary-light: hsl(187.83, 12.57%, 35.88%);
+  --font-family-primary: 'din-2014', sans-serif;
+  --initial-font-size: 1.5rem;
+}
+
+$breakpoints: (
+  'xxxlg': 125em,
+  //2000
+  'xxlg': 90em,
+  //1440,
+  'xlg': 75em,
+  //1200,
+  'lg': 62em,
+  //992
+  'md': 48em,
+  //768,
+  'sm': 32em,
+  //512,
+  'xsm': 22.5em,
+  //320,
+  'xxsm': 17.5em,
+  //280
+  'xxxsm': 10.625em // 170
+);

@@ -1,0 +1,29 @@
+@use './mixin' as *;
+
+body {
+  color: white;
+  font-family: var(--font-family-primary);
+  font-size: var(--initial-font-size);
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  font-size: 1.1rem;
+}
+
+body,
+html,
+#root {
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 112rem;
+  margin: auto;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}

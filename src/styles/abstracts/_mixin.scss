@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use './variables' as *;
+
+@mixin absoluteCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint, $is-max-width: false){
+  $media-query: 'min-width';
+
+  @if ($is-max-width) {
+    $media-query: 'max-width';
+  }
+
+  @media screen and (#{$media-query} : #{map.get($breakpoints,$breakpoint)}){
+    @content;
+  }
+}

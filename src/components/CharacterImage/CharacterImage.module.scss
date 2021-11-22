@@ -1,0 +1,13 @@
+.root {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 3rem var(--color-secondary);
+  img {
+    display: block;
+    width: 100%;
+  }
+}

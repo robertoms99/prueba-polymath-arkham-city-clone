@@ -1,0 +1,19 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.heading {
+  text-shadow: 0 0 3rem var(--color-secondary);
+  font-size: 7.5em;
+  max-width: 40%;
+  margin-bottom: 0.25em;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}

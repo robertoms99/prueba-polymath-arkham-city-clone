@@ -1,0 +1,64 @@
+/*||GLOBALS RESETS||*/
+
+/*1-remove tap highlighting in webkit UA*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent !important; //1
+}
+
+//1-base for rem factor
+html {
+  font-size: 62.5%; //1
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+//1-alternative box model
+//2- create a BFC
+body {
+  box-sizing: border-box; //1
+  overflow: auto; //2
+}
+
+//1- line-heights for all paragraphs
+p {
+  line-height: 1.5; //1
+}
+
+//1- remove marker for unordered/ordered lists items
+ul {
+  list-style-type: none//1;
+}
+
+// 1- remove user agent text-decoration and color
+// 2- remove ugly text-decoration
+a {
+  color: inherit; //1;
+  text-decoration: none; //2
+}
+
+//1- avoid user resizing
+textarea {
+  resize: none; //1
+}
+
+// 1- remove all button's dirty styles
+button,
+input,
+select,
+textarea {
+  outline: none; //1
+  border: none; //1
+  background: none; //1
+  font-family: inherit; //1
+  color: inherit; //1
+  font-size: 100%; //
+}

@@ -1,0 +1,45 @@
+@use './mixin' as *;
+
+.heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  &--primary {
+    @include responsive('md') {
+      font-size: 3.5em;
+    }
+    @include responsive('xxlg') {
+      font-size: 4.5em;
+    }
+    @include responsive('xxxlg') {
+      font-size: 6.5em;
+    }
+    font-size: 3em;
+  }
+  &--tertiary {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+}
+
+.heading--accent {
+  @include responsive('xxlg') {
+    font-size: 2em;
+  }
+  @include responsive('lg') {
+    font-size: 1.3em;
+  }
+  font-size: 1.12em;
+}
+
+.heading--accent,
+.accent {
+  color: var(--color-primary);
+}
+
+.accent {
+  font-weight: 500;
+}
+
+.paragraph {
+  line-height: 1.7;
+}
