@@ -11,7 +11,7 @@ const CharacterGrid: React.FC<ICharacterGrid> = ({ characters }) => {
   return (
     <article className={style.root}>
       <h3 className={cn(style.characterName)}>
-        {thumbnail !== null ? thumbnail.name : 'Character'}
+        {thumbnail !== null && thumbnail.isHidden !== true ? thumbnail.name : 'Character'}
       </h3>
       <article className={cn(style.characterGrid)}>
         {characters.map((character) => (

@@ -4,6 +4,8 @@ import { THUMBNAIL_CONTEXT } from '../../../../settings/contants'
 import ICharacterItem from './CharacterItem.interface'
 import style from './CharacterItem.module.scss'
 import { useImageFallback } from '../../../../hooks'
+import hiddenImage from '../../../../assets/images/hidden.png'
+import { useNavigate } from 'react-router-dom'
 
 const saveSelectedThumbnails = (id: string) => {
   const { localStorage } = window
@@ -16,7 +18,8 @@ const saveSelectedThumbnails = (id: string) => {
 
 const CharacterItem: React.FC<ICharacterItem> = ({ character }) => {
   const { onChangeThumbnail } = useContext(THUMBNAIL_CONTEXT)
-  const [isOld, setIsOld] = useState(() => {
+  const navigate = useNavigate()
+  const [isOld] = useState(() => {
     const { localStorage } = window
     const selectedThumbnailsString = localStorage.getItem('thumbnails_selected')
     if (selectedThumbnailsString !== null) {
@@ -25,15 +28,18 @@ const CharacterItem: React.FC<ICharacterItem> = ({ character }) => {
     }
     return false
   })
-  const { renderedImage } = useImageFallback({ image: character.image.url, fallback: '' })
+  const { renderedImage } = useImageFallback({
+    image: character.isHidden === true ? hiddenImage : character?.image?.url,
+    fallback: ''
+  })
 
   const handleHover = useCallback(() => {
-    onChangeThumbnail(character.isHidden === true ? null : character)
+    onChangeThumbnail(character)
   }, [character])
 
   const handleClick = useCallback(() => {
-    setIsOld(true)
     saveSelectedThumbnails(character.id)
+    navigate(`/character/${character.id as string}`)
   }, [character])
 
   return (
@@ -42,10 +48,14 @@ const CharacterItem: React.FC<ICharacterItem> = ({ character }) => {
       onMouseOver={handleHover}
       onClick={character.isHidden === true ? undefined : handleClick}
     >
-      <div className={cn(style.wrapper, character.isHidden === true || isOld ? '' : style.new)}>
-        {character.isHidden !== true && (
-          <img src={renderedImage} className={style.thumbnail} alt="?" />
+      <div
+        className={cn(
+          style.wrapper,
+          isOld ? '' : style.new,
+          character.isHidden === true ? style.hidden : ''
         )}
+      >
+        <img src={renderedImage} className={style.thumbnail} alt="?" />
       </div>
     </figure>
   )

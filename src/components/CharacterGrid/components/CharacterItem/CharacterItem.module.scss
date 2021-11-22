@@ -11,24 +11,44 @@
   left: 0;
   right: 0;
   bottom: 0;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    font-size: 1.25em;
+    font-weight: 900;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+  }
+  &.hidden,
   &.new {
     &::after {
       background-color: rgba(70, 70, 70, 0.5);
+    }
+  }
+  &.hidden {
+    &::after {
+      content: '' !important;
+    }
+  }
+  &.new {
+    &::after {
       content: 'NEW';
-      position: absolute;
-      top: 0;
-      font-size: 1.25em;
-      font-weight: 900;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      text-align: right;
     }
   }
 }
 
 .thumbnail {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+}
+
+.wrapper {
+  &:not(.hidden) {
+    .thumbnail {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }

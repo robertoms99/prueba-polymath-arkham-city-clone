@@ -15,4 +15,11 @@ const getCharacters = async (charactersCount: number) => {
   )
 }
 
-export { getCharacters }
+const getCharacter = async (id: string) => {
+  const response = await superagent
+    .get(`https://superheroapi.com/api.php/${API_TOKEN}/${id}`)
+    .set('Content-Type', 'application/json')
+  return response.body
+}
+
+export { getCharacters, getCharacter }

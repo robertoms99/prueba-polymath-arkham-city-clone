@@ -1,0 +1,76 @@
+.root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  position: relative;
+  box-shadow: 0 0 0.25rem 0.15rem var(--color-secondary-light);
+  border-radius: 0.5rem;
+  padding: 2em;
+  min-height: 50rem;
+}
+
+.details {
+  width: 60%;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.back {
+  cursor: pointer;
+  font-size: 2em;
+  align-self: flex-start;
+  margin-bottom: 5em;
+  &:hover {
+    box-shadow: 0 0 0.25rem 0.15rem var(--color-secondary-light);
+  }
+}
+
+.label {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+.data {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.legend {
+  font-size: 3em;
+}
+
+.options {
+  margin: 0.5em 0;
+}
+
+.information {
+  font-size: 2em;
+}
+
+.option {
+  opacity: 0.5;
+  &.optionSelected {
+    opacity: 1;
+    box-shadow: 0 0 0.25rem 0.15rem white;
+  }
+  & > * {
+    font-size: 2.5em;
+  }
+  cursor: pointer;
+  height: 5em;
+  width: 5em;
+  box-shadow: 0 0 0.25rem 0.15rem var(--color-secondary-light);
+  border-radius: 0.5rem;
+  &:not(&:last-child) {
+    margin-right: 1em;
+  }
+}

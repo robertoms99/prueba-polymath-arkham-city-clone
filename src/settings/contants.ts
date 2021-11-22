@@ -9,8 +9,10 @@ const APP_ROUTES = [
 ]
 
 const THUMBNAIL_CONTEXT = React.createContext<{
+  characters: any[]
   thumbnail: any | null
+  onChangeCharacters: Function
   onChangeThumbnail: Function
-}>({ thumbnail: null, onChangeThumbnail: () => {} })
+}>({ thumbnail: null, characters: [], onChangeCharacters: () => {}, onChangeThumbnail: () => {} })
 
 export { APP_ROUTES, THUMBNAIL_CONTEXT }
