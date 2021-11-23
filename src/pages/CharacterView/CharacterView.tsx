@@ -78,13 +78,13 @@ const CharacterView = () => {
 
   return (
     <section className={cn(style.root)}>
+      <button className={style.back} onClick={() => navigate('/')}>
+        <FontAwesomeIcon icon={faBackward} /> BACK
+      </button>
       {character === null ? (
         <Loader />
       ) : (
         <>
-          <button className={style.back} onClick={() => navigate('/')}>
-            <FontAwesomeIcon icon={faBackward} /> BACK
-          </button>
           <h1 className={cn(['heading', 'heading--primary'], style.name)}>
             {character?.name ?? ''}
           </h1>
