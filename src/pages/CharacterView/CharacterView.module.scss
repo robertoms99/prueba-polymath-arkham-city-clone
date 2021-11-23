@@ -1,8 +1,15 @@
+@use '../../styles/abstracts/mixin' as *;
+
 .root {
   display: flex;
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.image {
+  top: 0;
+  bottom: auto;
 }
 
 .content {
@@ -21,6 +28,9 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5em;
+  @include responsive('md', true) {
+    flex-direction: column;
+  }
 }
 
 .back {

@@ -117,7 +117,7 @@ const CharacterView = () => {
                 </ul>
               </div>
             </div>
-            <CharacterImage source={character?.image?.url} />
+            <CharacterImage source={character?.image?.url} className={cn(style.image)} />
           </article>
         </>
       )}
