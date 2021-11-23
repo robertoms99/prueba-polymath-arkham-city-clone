@@ -25,9 +25,9 @@
 
 .back {
   cursor: pointer;
-  font-size: 2em;
+  font-size: 1.5em;
   align-self: flex-start;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
   &:hover {
     box-shadow: 0 0 0.25rem 0.15rem var(--color-secondary-light);
   }
@@ -35,7 +35,7 @@
 
 .label {
   display: inline-block;
-  margin-right: 2em;
+  margin-right: 1.5em;
 }
 
 .data {
@@ -45,7 +45,7 @@
 }
 
 .legend {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .options {
@@ -53,7 +53,7 @@
 }
 
 .information {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .option {
@@ -63,11 +63,11 @@
     box-shadow: 0 0 0.25rem 0.15rem white;
   }
   & > * {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   cursor: pointer;
-  height: 5em;
-  width: 5em;
+  height: 4em;
+  width: 4em;
   box-shadow: 0 0 0.25rem 0.15rem var(--color-secondary-light);
   border-radius: 0.5rem;
   &:not(&:last-child) {

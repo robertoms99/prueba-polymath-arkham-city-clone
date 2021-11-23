@@ -9,7 +9,9 @@ body {
     var(--color-primary-light),
     var(--color-primary-dark)
   );
-  font-size: 1.1rem;
+  @include responsive('sm', true) {
+    font-size: 1.2rem;
+  }
 }
 
 body,
@@ -21,7 +23,7 @@ html,
 #root {
   max-width: 112rem;
   margin: auto;
-  padding: 1em 2em;
+  padding: 2em;
 }
 
 html,
